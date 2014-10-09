@@ -1,0 +1,16 @@
+# ignore emacs backup files
+*~
+
+# ignore kdiff3 original files
+*.orig
+
+# ignore VIM swap files
+*.swp
+
+# ignore word temporary files
+~$*
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+
