@@ -14,8 +14,12 @@
 		      cider
 		      markdown-mode
                       sass-mode
+                      elixir-mode
+                      erlang
 		      evil
 		      evil-leader
+                      helm
+                      org
 		      solarized-theme
 		      zenburn-theme))
 
