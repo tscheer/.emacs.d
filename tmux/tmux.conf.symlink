@@ -1,0 +1,29 @@
+##
+# tmux general configuration
+##
+
+# display in 256 colors
+set -g default-terminal "screen-256color"
+
+# terminal supports UTF-8
+set -g status-utf8 on
+
+# history buffer will keep 20k lines
+set -g history-limit 20000
+
+# change the prefix key to ctrl-a (same as screen)
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+
+# for nested tmux sessions
+bind-key a send-prefix
+
+
+##
+# key bindings
+##
+
+# reload config file
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+
