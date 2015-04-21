@@ -125,4 +125,8 @@ autocmd BufNewFile,BufReadPost *.rs set filetype=rust
 "
 execute pathogen#infect()
 
+"
+" vim-sneak settings
+"
+let g:sneak#streak = 1    " enable smart streak-mode
 
