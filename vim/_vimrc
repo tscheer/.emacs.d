@@ -1,0 +1,131 @@
+set nocompatible
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+
+" My default settings
+set tabstop=2       " tabstop = 2 spaces
+set shiftwidth=2    " shiftwidth = 2 spaces
+set expandtab       " expand tabs to spaces
+set autoindent      " auto-indent
+set ruler           " enable ruler
+set visualbell      " use visual bells
+set backspace=indent,eol,start  " set what can be backspaced through
+set smarttab        " insert blanks according to shiftwidth
+set complete-=i     " disable searching included files for keyword completion
+set nrformats-=octal  " numbers starting with 0's are not octal
+set laststatus=2    " always show a status line
+set showcmd         " show commands as they are typed
+set wildmenu        " use enhanced command-line completion
+set autoread        " reload files that have been changed outside of Vim and
+                    " not changed inside of Vim
+set fileformats+=mac  " enable support for mac file formats
+
+"
+" scrolling 
+"
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+
+
+"
+" Make searches case-insensitive except when uppercase letters
+" are included.  Thus /foo matches FOO and foo, but /FOO only
+" matches FOO
+"
+set incsearch   " highlight options as the expression is typed
+set ignorecase  " case of normal letters are ignored
+set smartcase   " ignore case when pattern only has lower case letters
+set hlsearch    " highlight all matches
+
+" map F6 to turn off highlights
+nmap <F6> :nohlsearch<CR>
+
+" map jk to the ESC key.  This provides a quick home row key to
+" access the Escape without reaching or using CTRL+[
+inoremap jk <ESC>
+
+" change the leader key to ','.  This is a little easier to access than '\'
+let mapleader=","
+
+"
+" :command to make it easier to open common files
+"
+:command Olink :e c:\mydocs\Dropbox\links.txt
+:command Olinks :e c:\mydocs\Dropbox\links.txt
+:command Otodo :e c:\mydocs\Dropbox\todo.txt
+
+
+" turn on filetype detection with plugin loading and file indenting
+if has('autocmd')
+  filetype plugin indent on
+endif
+
+" turn on syntax highlighting
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" set character encodings inside Vim
+set encoding=utf-8
+
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+
+"
+" golang setup
+"
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+
+" go format when saving go files
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" load matchit.vim
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+" force all files with the *.md extension to be treated as markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" rust syntax setup
+autocmd BufNewFile,BufReadPost *.rs set filetype=rust
+
+"
+" Pathogen startup
+"
+execute pathogen#infect()
+
+
