@@ -1,7 +1,4 @@
 set nocompatible
-"source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
 
 " My default settings
 set tabstop=2       " tabstop = 2 spaces
@@ -45,9 +42,9 @@ set hlsearch    " highlight all matches
 " map F6 to turn off highlights
 nmap <F6> :nohlsearch<CR>
 
-" map jk to the ESC key.  This provides a quick home row key to
+" map fd to the ESC key.  This provides a quick home row key to
 " access the Escape without reaching or using CTRL+[
-inoremap jk <ESC>
+inoremap fd <ESC>
 
 " change the leader key to ','.  This is a little easier to access than '\'
 let mapleader=","
