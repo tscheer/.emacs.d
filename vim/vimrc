@@ -71,6 +71,11 @@ endif
 " set character encodings inside Vim
 set encoding=utf-8
 
+" delete comment characters when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
+
 
 set diffexpr=MyDiff()
 function MyDiff()
