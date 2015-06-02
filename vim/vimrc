@@ -39,8 +39,9 @@ set ignorecase  " case of normal letters are ignored
 set smartcase   " ignore case when pattern only has lower case letters
 set hlsearch    " highlight all matches
 
-" map F6 to turn off highlights
+" map F6/C-L to turn off highlights
 nmap <F6> :nohlsearch<CR>
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 " map fd to the ESC key.  This provides a quick home row key to
 " access the Escape without reaching or using CTRL+[
