@@ -37,6 +37,14 @@ if exists('+linebreak')
 endif
 
 "
+" PaperColor theme
+"
+if has("gui_running")
+  set t_Co=256
+  colorscheme PaperColor
+endif
+
+"
 " Make searches case-insensitive except when uppercase letters
 " are included.  Thus /foo matches FOO and foo, but /FOO only
 " matches FOO
