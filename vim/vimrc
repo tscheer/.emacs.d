@@ -46,8 +46,8 @@ nmap <F6> :nohlsearch<CR>
 " access the Escape without reaching or using CTRL+[
 inoremap fd <ESC>
 
-" change the leader key to ','.  This is a little easier to access than '\'
-let mapleader=","
+" change the leader key to <SPACE>.  This is a little easier to access than '\'
+let mapleader="\<Space>"
 
 "
 " :command to make it easier to open common files
