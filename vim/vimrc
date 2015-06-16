@@ -19,6 +19,18 @@ set autoread        " reload files that have been changed outside of Vim and
 set fileformats+=mac  " enable support for mac file formats
 
 "
+" backup and swap file location
+"
+if has("win32") || has("win64")
+  " $TMP default on windows is c:\Users\<username>\AppData\Local\Temp
+  set directory=~\\.backup//,$TMP//,.
+  set backupdir=~\\.backup//,$TMP//,.
+else
+  set directory=~/.backup//,~/tmp//,.
+  set backupdir=~/.backup//,~/tmp//,.
+end
+
+"
 " scrolling 
 "
 if !&scrolloff
