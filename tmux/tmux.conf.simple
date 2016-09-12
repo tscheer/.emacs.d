@@ -1,0 +1,15 @@
+###
+# tmux general configuration
+
+# display in 256 colors
+set -g default-terminal "screen-256color"
+
+# terminal supports UTF-8
+set -g status-utf8 on
+
+# history buffer will keep 20k lines
+set -g history-limit 20000
+
+# speed up processing of the ESC key for neovim (from 500 ms to 10 ms)
+set -g escape-time 10
+
