@@ -80,9 +80,7 @@ let mapleader="\<Space>"
 "
 " :command to make it easier to open common files
 "
-:command Olink :e c:\mydocs\Dropbox\links.txt
-:command Olinks :e c:\mydocs\Dropbox\links.txt
-:command Otodo :e c:\mydocs\Dropbox\todo.txt
+:command Otodo :e ~/Dropbox/notebook/todo.adoc
 
 
 " turn on filetype detection with plugin loading and file indenting
