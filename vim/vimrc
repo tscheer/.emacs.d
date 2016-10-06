@@ -3,6 +3,7 @@ set nocompatible
 " My default settings
 set tabstop=2       " tabstop = 2 spaces
 set shiftwidth=2    " shiftwidth = 2 spaces
+set shiftround      " when '<' and '>' round indents to multiple of shiftwidth
 set expandtab       " expand tabs to spaces
 set autoindent      " auto-indent
 set ruler           " enable ruler
@@ -17,6 +18,9 @@ set wildmenu        " use enhanced command-line completion
 set autoread        " reload files that have been changed outside of Vim and
                     " not changed inside of Vim
 set fileformats+=mac  " enable support for mac file formats
+set hidden          " allow modified buffers to be hidden
+set history=150     " triple the amount of history remembered
+set pastetoggle=<F2>  " setup a key to toggle the paste mode
 
 "
 " backup and swap file location
