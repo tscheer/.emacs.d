@@ -43,7 +43,7 @@ endif
 "
 " break indent wrapping
 "
-if exists('+linebreak')
+if has("linebreak")
   set breakindent
   set breakindentopt=shift:2
 endif
