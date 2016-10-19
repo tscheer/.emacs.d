@@ -21,6 +21,8 @@ set fileformats+=mac  " enable support for mac file formats
 set hidden          " allow modified buffers to be hidden
 set history=150     " triple the amount of history remembered
 set pastetoggle=<F2>  " setup a key to toggle the paste mode
+set timeout         " timeout waiting for key sequence completion
+set timeoutlen=100  " timeout in 0.1 sec
 
 "
 " backup and swap file location
@@ -85,6 +87,8 @@ let mapleader="\<Space>"
 " :command to make it easier to open common files
 "
 :command Otodo :e ~/Dropbox/notebook/todo.adoc
+:command Opomo :e ~/Dropbox/notebook/pomodoro.txt
+:command Opomodoro :e ~/Dropbox/notebook/pomodoro.txt
 
 
 " turn on filetype detection with plugin loading and file indenting
