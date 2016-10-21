@@ -58,3 +58,7 @@ let mapleader="\<Space>"
 :command Opomo :e ~/Dropbox/notebook/pomodoro.txt
 :command Opomodoro :e ~/Dropbox/notebook/pomodoro.txt
 
+" solarized colors
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
