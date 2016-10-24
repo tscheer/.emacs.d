@@ -62,3 +62,38 @@ let mapleader="\<Space>"
 let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
+
+" terminal window changing key mappings
+" see :help :terminal-emulator-input
+:tnoremap <A-h> <C-\><C-n><C-w>h
+:tnoremap <A-j> <C-\><C-n><C-w>j
+:tnoremap <A-k> <C-\><C-n><C-w>k
+:tnoremap <A-l> <C-\><C-n><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+
+"
+" nvim plugins (via vim-plug)
+"
+call plug#begin()
+
+" vim-expand-region
+Plug 'terryma/vim-expand-region'
+
+" vim-repeat
+Plug 'tpope/vim-repeat'
+
+" vim-surround
+Plug 'tpope/vim-surround'
+
+" vim-sneak
+Plug 'justinmk/vim-sneak'
+
+call plug#end()
+
+"
+" vim-sneak settings
+"
+let g:sneak#streak = 1    " enable smart streak-mode
