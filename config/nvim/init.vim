@@ -13,6 +13,7 @@ set hidden          " allow modified buffers to be hidden
 set pastetoggle=<F2>  " setup a key to toggle the paste mode
 set timeout         " timeout waiting for key sequence completion
 set timeoutlen=100  " timeout in 0.1 sec
+set nofixeol        " don't try to fix the end of lines on files
 
 "
 " scrolling 
