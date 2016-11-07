@@ -80,16 +80,16 @@ set background=dark
 "
 call plug#begin()
 
-" vim-expand-region
+" vim-expand-region (:help vim-expand-region)
 Plug 'terryma/vim-expand-region'
 
 " vim-repeat
 Plug 'tpope/vim-repeat'
 
-" vim-surround
+" vim-surround (:help surround)
 Plug 'tpope/vim-surround'
 
-" vim-sneak
+" vim-sneak (:help sneak)
 Plug 'justinmk/vim-sneak'
 
 call plug#end()
