@@ -92,6 +92,12 @@ Plug 'tpope/vim-surround'
 " vim-sneak (:help sneak)
 Plug 'justinmk/vim-sneak'
 
+" vim-speeddating (:help speeddating)
+" <C-A>/<C-X> can now increment/decrement dates, times and datetimes.  Also
+" allows incrementing/decrementing roman numerals and ordinals (1st, 2nd,
+" 3rd...).
+Plug 'tpope/vim-speeddating'
+
 call plug#end()
 
 "
